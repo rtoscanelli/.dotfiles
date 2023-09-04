@@ -11,3 +11,7 @@ export PATH="$PATH:/usr/local/bin:/usr/bin:/bin"
 
 # Set your editor (change to your preferred editor)
 export EDITOR="nvim"
+
+# zsh-autosuggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
