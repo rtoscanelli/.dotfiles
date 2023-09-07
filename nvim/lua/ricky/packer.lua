@@ -26,7 +26,7 @@ return require('packer').startup(function(use)
   -- Status line - lua line
   use ('nvim-lualine/lualine.nvim')
 
-  -- Other plygins
+  -- Other plugins
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
   use('theprimeagen/harpoon')
@@ -34,6 +34,7 @@ return require('packer').startup(function(use)
   use('tpope/vim-fugitive')
   use("github/copilot.vim")
   use("terrortylor/nvim-comment")
+  use("christoomey/vim-tmux-navigator")
 
   -- LSP-Zero
   use {
@@ -76,7 +77,7 @@ return require('packer').startup(function(use)
   -- Primeagen vim game
   use('ThePrimeagen/vim-be-good')
 
-  -- install without yarn or npm
+  -- Markdown preview
   use({
       "iamcco/markdown-preview.nvim",
       run = function() vim.fn["mkdp#util#install"]() end,
