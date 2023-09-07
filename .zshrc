@@ -15,3 +15,8 @@ export EDITOR="nvim"
 # zsh-autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# Enable immediate cycling when pressing TAB
+
+# Make zsh accept a suggestion with TAB
+bindkey "\t" menu-complete
+
