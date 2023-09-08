@@ -26,6 +26,13 @@ truncation_length = 4
 [fill]
 symbol = " "
 
+[git_status]
+untracked = '[\($count?\)](red)'
+modified = '[\(!$count\)](yellow)'
+staged = '[\(+$count\)](green)'
+deleted = '[\(-$count\🗑)](red)'
+style = "subtext1"
+
 [hostname]
 ssh_symbol = " "
 style = "lavender"
@@ -41,9 +48,8 @@ format = '[$indicator]($style) '
 style = "green bold"
 
 [time]
-format = '[󰔛 $time ](#a6adc8)'
+format = '[󰔛 $time ](subtext1)'
 disabled = false
-style = "pink"
 
 # -- Just Nerd Font Symbols -- 
 
