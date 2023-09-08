@@ -1,7 +1,9 @@
 palette = "catppuccin-mocha"
 
 format="""
-[╭╴](238)[ ](teal) in \
+[╭╴](238)\
+$os \
+in \
 $all\
 $fill\
 $shell\
@@ -30,7 +32,8 @@ style = "lavender"
 ssh_only = true
 
 [os]
-disabled = true
+disabled = false
+# style = "teal"
 
 [shell]
 disabled = false
@@ -102,7 +105,7 @@ NixOS = " "
 OpenBSD = " "
 openSUSE = " "
 OracleLinux = " "
-Pop = " "
+Pop = "[ ](teal)"
 Raspbian = " "
 Redhat = " "
 RedHatEnterprise = " "
