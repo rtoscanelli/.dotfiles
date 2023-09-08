@@ -27,11 +27,13 @@ truncation_length = 4
 symbol = " "
 
 [git_status]
+ahead = '\(⇡\)'
+behind = '\(⇣\)'
 untracked = '[\($count?\)](red)'
 modified = '[\(!$count\)](yellow)'
 staged = '[\(+$count\)](green)'
 deleted = '[\(-$count\🗑)](red)'
-style = "subtext1"
+style = "peach"
 
 [hostname]
 ssh_symbol = " "
