@@ -18,3 +18,6 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Make zsh accept a suggestion with TAB
 bindkey "\t" menu-complete
 
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
