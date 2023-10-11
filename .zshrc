@@ -1,4 +1,5 @@
 # Created by newuser for 5.8.
+HISTSIZE=1000
 SAVEHIST=1000  # Save most-recent 1000 lines
 export HISTFILE=~/.zsh_history
 
