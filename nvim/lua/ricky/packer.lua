@@ -71,19 +71,4 @@ return require('packer').startup(function(use)
       },
   }
 
-  -- Built-in terminal
-  -- use("kassio/neoterm") -- old terminal plugin
-  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
-      require("toggleterm").setup()
-  end}
-
-  -- Primeagen vim game
-  use('ThePrimeagen/vim-be-good')
-
-  -- Markdown preview
-  use({
-      "iamcco/markdown-preview.nvim",
-      run = function() vim.fn["mkdp#util#install"]() end,
-  })
-
 end)
