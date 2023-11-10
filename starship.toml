@@ -5,44 +5,31 @@ format="""
 $os \
 in \
 $all\
-$fill\
-$shell\
-$time\
 $line_break\
 $character
 """
 
 [character]
-success_symbol = "[╰─](238)[››](lavender)"
+success_symbol = "[╰─](238)[››](peach)"
 error_symbol = "[╰─](238)[››](red)"
 vicmd_symbol = "[❮](green)"
 
 [directory]
-read_only = " "
-home_symbol = " ~"
-style = "blue"
 truncation_length = 4
-
-[fill]
-symbol = " "
-
-[hostname]
-ssh_symbol = " "
-style = "lavender"
-ssh_only = true
+style = "peach"
+read_only = " "
 
 [os]
 disabled = false
-# style = "teal"
 
 [shell]
-disabled = false
+disabled = true
 format = '[$indicator]($style) '
 style = "green bold"
 
 [time]
 format = '[󰔛 $time ](subtext1)'
-disabled = false
+disabled = true
 
 # -- Just Nerd Font Symbols -- 
 
@@ -53,9 +40,12 @@ style = "purple"
 [docker_context]
 symbol = " "
 
+[git_status]
+style = "peach"
+
 [git_branch]
 symbol = " "
-style = "peach"
+style = "overlay0"
 
 [java]
 symbol = " "
@@ -74,6 +64,7 @@ symbol = " "
 
 [rust]
 symbol = " "
+
 [os.symbols]
 Alpaquita = " "
 Alpine = " "
@@ -104,7 +95,7 @@ NixOS = " "
 OpenBSD = " "
 openSUSE = " "
 OracleLinux = " "
-Pop = "[ ](teal)"
+Pop = "[ ]()"
 Raspbian = " "
 Redhat = " "
 RedHatEnterprise = " "
