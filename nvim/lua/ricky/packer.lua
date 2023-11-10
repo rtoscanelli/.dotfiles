@@ -31,10 +31,13 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/playground')
   use('theprimeagen/harpoon')
   use('mbbill/undotree')
-  use('tpope/vim-fugitive')
   use("github/copilot.vim")
   use("terrortylor/nvim-comment")
   use("christoomey/vim-tmux-navigator")
+
+  -- Git plugins
+  use('tpope/vim-fugitive')
+  use('lewis6991/gitsigns.nvim')
 
   -- LSP-Zero
   use {
