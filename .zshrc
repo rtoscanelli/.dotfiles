@@ -17,16 +17,9 @@ export EDITOR="nvim"
 
 # zsh-autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/.zshrc
 
 # Make zsh accept a suggestion with TAB
 bindkey "\t" menu-complete
 
-
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Configure variables to use minizinc
-export PATH=~/Applications/MiniZincIDE-2.7.6-bundle-linux-x86_64/bin:$PATH
-export LD_LIBRARY_PATH=MiniZincIDE-2.7.6-bundle-linux-x86_64/lib:$LD_LIBRARY_PATH
-export QT_PLUGIN_PATH=MiniZincIDE-2.7.6-bundle-linux-x86_64/plugins:$QT_PLUGIN_PATH
