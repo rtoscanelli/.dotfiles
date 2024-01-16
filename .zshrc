@@ -23,3 +23,18 @@ bindkey "\t" menu-complete
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Add fzf key bindings
+bindkey -s "^f" "$HOME/.dotfiles/open_tmux_session.zsh"
+
+# Golang variables
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin
+
+# Java variables
+export JAVA_HOME=~/Applications/jdk-18/
+export PATH=$PATH:$JAVA_HOME/bin
+
+# Maven variables
+export M2_HOME=~/Applications/apache-maven-3.9.5/
+export PATH=$PATH:$M2_HOME/bin
