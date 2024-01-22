@@ -1,0 +1,1 @@
+{"main.go":{"body":["package main","","func main() {","    args := os.Args;","","    if len(args) < 2 {","        println(\"Usage: day <input file>\");","    }","","    println(\"Part 1: \", part1(args[1]));","}","","func part1(filename string) int {","    return 0;","}"],"prefix":"main.go"}}
