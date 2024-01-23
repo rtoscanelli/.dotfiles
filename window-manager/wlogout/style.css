@@ -1,16 +1,14 @@
 * {
     background-image: none;
-    font-size: 12px;
+    font-size: 15px;
 }
-
-@import "theme.css";
 
 window {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
 button {
-    color: white;
+    color: black;
     background-color: @main-fg;
     outline-style: none;
     border: none;
