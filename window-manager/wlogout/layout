@@ -1,41 +1,34 @@
 {
     "label" : "lock",
-    "action" : "swaylock -C $HOME/.config/swaylock/config",
-    "text" : "Lock",
+    "action" : "swaylock",
+    "text" : "",
     "keybind" : "l"
+}
+
+{
+    "label" : "shutdown",
+        "action" : "systemctl poweroff",
+        "text" : "",
+        "keybind" : "s"
+}
+
+{
+    "label" : "suspend",
+        "action" : "swaylock -f && systemctl suspend",
+        "text" : "",
+        "keybind" : "u"
+}
+
+{
+    "label" : "reboot",
+        "action" : "systemctl reboot",
+        "text" : "",
+        "keybind" : "r"
 }
 
 {
     "label" : "logout",
     "action" : "hyprctl dispatch exit 0",
-    "text" : "Logout",
+    "text" : "",
     "keybind" : "e"
-}
-
-{
-    "label" : "suspend",
-    "action" : "swaylock -f && systemctl suspend",
-    "text" : "Suspend",
-    "keybind" : "u"
-}
-
-{
-    "label" : "shutdown",
-    "action" : "systemctl poweroff",
-    "text" : "Shutdown",
-    "keybind" : "s"
-}
-
-{
-    "label" : "hibernate",
-    "action" : "systemctl hibernate",
-    "text" : "Hibernate",
-    "keybind" : "h"
-}
-
-{
-    "label" : "reboot",
-    "action" : "systemctl reboot",
-    "text" : "Reboot",
-    "keybind" : "r"
 }
