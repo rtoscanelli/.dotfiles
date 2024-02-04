@@ -16,11 +16,10 @@ button {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20%;
-    border-radius: 0px;
+    border-radius: 40px;
     box-shadow: none;
     text-shadow: none;
     animation: gradient_f 20s ease-in infinite;
-    border-radius: 80px 80px 80px 80px;
 }
 
 button:focus {
