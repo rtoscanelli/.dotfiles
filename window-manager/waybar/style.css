@@ -44,6 +44,7 @@ window#waybar.hidden {
 }
 
 #workspaces button.urgent {
+    color: #1e1e2e;
     background-color: #f38ba8;
 }
 
