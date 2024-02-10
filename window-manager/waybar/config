@@ -9,7 +9,8 @@
     ],
 
     "modules-center": [
-        "clock"
+        "clock",
+        "custom/notifications",
     ],
 
     "modules-right": [
@@ -81,7 +82,7 @@
         "tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
         "tooltip-format-ethernet": "󰀂  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
         "tooltip-format-disconnected": "Disconnected",
-        "on-click": "~//.dotfiles/window-manager/rofi/rofi-wifi-menu.sh",
+        "on-click": "~/.dotfiles/window-manager/rofi/rofi-wifi-menu.sh",
         "on-click-right": "~/.dotfiles/window-manager/rofi/rofi-wifi-menu.sh",
         "interval": 5,
         "nospacing": 1,
@@ -142,5 +143,11 @@
         "format": "󰤆",
         "tooltip": false,
         "on-click": "wlogout -b 5 -c 50 -T 400 -B 400"
-    }
+    },
+
+    "custom/notifications": {
+        "format": "󰂚",
+        "tooltip": false,
+        "on-click": "swaync-client -t"
+    },
 }
