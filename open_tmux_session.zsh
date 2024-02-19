@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Directories to search
-search_directories=("$HOME/ist" "$HOME/projects" "$HOME/Arduino")
+search_directories=("$HOME/ist" "$HOME/projects" "$HOME/.dotfiles")
 
 selected_folder=$(find "${search_directories[@]}" -type d | fzf)
 
