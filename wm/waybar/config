@@ -37,8 +37,8 @@
     "custom/power": {
         "format": " ",
         "exec": "echo ; echo  logout",
-        "on-click": "/home/ricardo/.dotfiles/window-manager/rofi/scripts/powermenu.sh",
-        "interval" : 86400, // once every day
+        "on-click": "/home/ricardo/.dotfiles/wm/rofi/scripts/powermenu.sh",
+        "interval" : 86400,
         "tooltip": true
     },
 
@@ -113,7 +113,7 @@
         "format": "{icon} {capacity}%",
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
-        "format-alt": "{time} {icon}",
+        "format-alt": "{icon} {time}",
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
 
@@ -141,7 +141,7 @@
         "format-disconnected": "󰖪 ",
         "tooltip-format-disconnected": "Disconnected",
         "interval": 2,
-        "on-click-left": "nm-applet",
+        "on-click": "nm-applet",
         "on-click-right": "blueman-manager",
     },
 
