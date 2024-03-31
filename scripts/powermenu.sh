@@ -10,6 +10,6 @@ case "$CHOSEN" in
     "⏻ Shutdown") systemctl poweroff ;;
 	" Suspend") systemctl suspend  && betterlockscreen -l ;;
 	" Reboot") systemctl reboot ;;
-	"󰗼 Log Out") hyprctl dispatch exit ;;
+	"󰗼 Log Out") i3-msg exit ;;
 	*) exit 1 ;;
 esac
