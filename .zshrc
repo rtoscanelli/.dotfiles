@@ -5,6 +5,7 @@ export HISTFILE=~/.zsh_history
 
 # Starship shell prompt.
 eval "$(starship init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
 # Set an alias for ls to use color by default
 alias ls='ls --color=auto'
@@ -31,10 +32,5 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH/bin
 
-# Java variables
-export JAVA_HOME=~/Applications/jdk-18/
-export PATH=$PATH:$JAVA_HOME/bin
-
-# Maven variables
-export M2_HOME=~/Applications/apache-maven-3.9.5/
-export PATH=$PATH:$M2_HOME/bin
+# Java and Maven variables for SEC course
+source ~/Applications/.ist-sec-env
