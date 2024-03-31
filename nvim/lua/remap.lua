@@ -13,6 +13,12 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set({"n", "v"}, "<leader>p", [["+p]])
 vim.keymap.set("n", "<leader>P", [["+P]])
 
+-- center cursor after jumping
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "n", "nzz")
+vim.keymap.set("n", "N", "Nzz")
+
 -- vim-tmux-navigator
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
