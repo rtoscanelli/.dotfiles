@@ -1,6 +1,6 @@
 configuration {
     font: "JetBrainsMono Nerd Font 10";
-    modes: [drun,window,run,filebrowser,emoji,combi];
+    modes: [drun,window,run,filebrowser,combi];
     drun {
         display-name: " ";
     }
@@ -13,12 +13,12 @@ configuration {
     }
 }
 
-@import "themes/catppuccin-mocha.rasi"
+@import "themes/catppuccin-blue.rasi"
 
 window {
     background-color: @background;
     border:           3;
-    border-radius:    10;
+    border-radius:    0;
     border-color:     @active;
     padding:          8;
     width: 520px;
