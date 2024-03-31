@@ -17,14 +17,15 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
 exec --no-startup-id nitrogen --restore
-exec_always --no-startup-id polybar
+exec --no-startup-id polybar
+exec --no-startup-id autorandr --load docked && nitrogen --restore
 
 
 # === MONITOR CONFIGURATION ===
-bindsym $mod+Ctrl+1 exec autorandr --load laptop
-bindsym $mod+Ctrl+2 exec autorandr --load docked
-bindsym $mod+Ctrl+3 exec autorandr --load mirror
-bindsym $mod+Ctrl+4 exec autorandr --load extend
+bindsym $mod+Ctrl+1 exec autorandr --load laptop && nitrogen --restore
+bindsym $mod+Ctrl+2 exec autorandr --load docked && nitrogen --restore
+bindsym $mod+Ctrl+3 exec autorandr --load mirror && nitrogen --restore
+bindsym $mod+Ctrl+4 exec autorandr --load extend && nitrogen --restore
 
 
 # === SCRIPTS ===
