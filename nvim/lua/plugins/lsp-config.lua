@@ -9,7 +9,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "gopls" }
+                ensure_installed = { "lua_ls", "gopls", "jdtls", "tsserver", "emmet_ls" },
             })
         end
     },
@@ -41,11 +41,38 @@ return {
                     },
                 },
             })
+            lspconfig.jdtls.setup({
+                capabilities = capabilities,
+                cmd = { "jdtls" },
+                filetypes = { "java" },
+                -- root_dir = lspconfig.util.root_pattern("pom.xml", ".git"),
+                root_dir = lspconfig.util.root_pattern(".git"),
+            })
+            lspconfig.tsserver.setup({
+                capabilities = capabilities,
+                init_options = {
+                    preferences = {
+                        disableSuggestions = true,
+                    },
+                },
+            })
+            lspconfig.emmet_ls.setup({
+                capabilities = capabilities,
+                filetypes = { "html", "css" },
+            })
 
             vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
             vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, {})
             vim.keymap.set('n', '<leader>gr', vim.lsp.buf.references, {})
             vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
+
+            -- Add border to floating windows
+            local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+            function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+                opts = opts or {}
+                opts.border = "rounded"
+                return orig_util_open_floating_preview(contents, syntax, opts, ...)
+            end
         end
     },
 }
