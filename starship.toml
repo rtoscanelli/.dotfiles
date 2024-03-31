@@ -10,13 +10,13 @@ $character
 """
 
 [character]
-success_symbol = "[╰─](238)[››](peach)"
+success_symbol = "[╰─](238)[››](yellow)"
 error_symbol = "[╰─](238)[››](red)"
 vicmd_symbol = "[❮](green)"
 
 [directory]
 truncation_length = 4
-style = "peach"
+style = "yellow"
 read_only = " "
 
 [os]
