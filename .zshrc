@@ -21,6 +21,10 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Make zsh accept a suggestion with TAB
 bindkey "\t" menu-complete
+bindkey "^l" forward-word
+bindkey "^h" backward-word
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
