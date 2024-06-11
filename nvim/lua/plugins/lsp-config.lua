@@ -60,7 +60,11 @@ return {
                 capabilities = capabilities,
                 filetypes = { "html", "css" },
             })
+            lspconfig.dartls.setup({
+                capabilities = capabilities,
+            })
 
+            vim.keymap.set('n', 'J', vim.diagnostic.open_float)
             vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
             vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, {})
             vim.keymap.set('n', '<leader>gr', vim.lsp.buf.references, {})
@@ -72,7 +76,7 @@ return {
                 opts = opts or {}
                 opts.border = "rounded"
                 return orig_util_open_floating_preview(contents, syntax, opts, ...)
-            end
+           end
         end
     },
 }
