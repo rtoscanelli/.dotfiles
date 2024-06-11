@@ -19,6 +19,7 @@ exec --no-startup-id dunst
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id polybar
 exec --no-startup-id autorandr --load docked && nitrogen --restore
+exec --no-startup-id picom -b
 
 
 # === MONITOR CONFIGURATION ===
@@ -52,6 +53,7 @@ bindsym $mod+f fullscreen toggle
 # start applications
 bindsym $mod+t exec kitty
 bindsym $mod+d exec rofi -show drun -show-icons
+bindsym $mod+period exec rofi -modi emoji -show emoji
 bindsym $mod+Shift+S exec flameshot gui
 
 # change focus

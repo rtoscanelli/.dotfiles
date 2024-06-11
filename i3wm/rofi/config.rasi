@@ -1,6 +1,6 @@
 configuration {
     font: "JetBrainsMono Nerd Font 10";
-    modes: [drun,window,run,filebrowser,combi];
+    modes: [drun,window,run,filebrowser,combi, emoji];
     drun {
         display-name: " ";
     }
