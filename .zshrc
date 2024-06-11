@@ -12,6 +12,8 @@ alias ls='ls --color=auto'
 
 # Add directories to your PATH
 export PATH="$PATH:/usr/local/bin:/usr/bin:/bin"
+export PATH="$PATH:/usr/bin/python3"
+export PATH="$PATH:/usr/bin/python"
 
 # Set your editor (change to your preferred editor)
 export EDITOR="nvim"
@@ -38,3 +40,5 @@ export PATH=$PATH:$GOPATH/bin
 
 # Java and Maven variables for SEC course
 source ~/Applications/.ist-sec-env
+
+export PATH="$PATH:$HOME/Applications/flutter/bin"
