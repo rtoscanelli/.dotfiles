@@ -67,7 +67,7 @@ return {
                     end,
                 },
                 mapping = cmp.mapping.preset.insert({
-                    ["<CR>"] = cmp.mapping.confirm({ select = true }),
+                    ["<CR>"] = cmp.mapping.confirm({ select = false }),
                     ["<C-Space>"] = cmp.mapping.complete(),
 
                     ["<C-p>"] = cmp.mapping.select_prev_item(),
