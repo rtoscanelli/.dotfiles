@@ -1,44 +1,49 @@
-# Created by newuser for 5.8.
-HISTSIZE=1000
-SAVEHIST=1000  # Save most-recent 1000 lines
-export HISTFILE=~/.zsh_history
+# Config file inspired in 'Dreams of Autonomy - zsh' yt video
 
-# Starship shell prompt.
-eval "$(starship init zsh)"
-eval "$(zoxide init --cmd cd zsh)"
+# Configure Zinit - the plugin manager for zsh
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
 
-# Set an alias for ls to use color by default
-alias ls='ls --color=auto'
+# Add plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab # FZF tab completion
 
-# Add directories to your PATH
-export PATH="$PATH:/usr/local/bin:/usr/bin:/bin"
-export PATH="$PATH:/usr/bin/python3"
-export PATH="$PATH:/usr/bin/python"
+# Load completions
+autoload -U compinit && compinit
 
-# Set your editor (change to your preferred editor)
-export EDITOR="nvim"
+zinit cdreplay -q # usefull for zinit
 
-# zsh-autosuggestions
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# Make zsh accept a suggestion with TAB
-bindkey "\t" menu-complete
-bindkey "^l" forward-word
-bindkey "^h" backward-word
+# Keybinds
+bindkey '^l' autosuggest-accept
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# History
+HISTSIZE=1000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 
-# Add fzf key bindings
-bindkey -s "^f" "$HOME/.dotfiles/open_tmux_session.zsh"
+# Completion styling
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # to make completion case-insensitive
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # to colorize completions
+zstyle ':completion:*' menu no # to disable default menu for fzf-tab
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath' # to preview directories with ls
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath' # to preview directories with ls + zoxide
 
-# Golang variables
-export GOPATH=$HOME/go
-export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOPATH/bin
-
-# Java and Maven variables for SEC course
-source ~/Applications/.ist-sec-env
-
-export PATH="$PATH:$HOME/Applications/flutter/bin"
+# Shell integrations
+source /usr/share/fzf/shell/key-bindings.zsh # fzf keybindings
+eval "$(zoxide init --cmd cd zsh)" # zoxide shell integration
