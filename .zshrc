@@ -47,6 +47,9 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath' # to 
 # Shell integrations
 source /usr/share/fzf/shell/key-bindings.zsh # fzf keybindings
 eval "$(zoxide init --cmd cd zsh)" # zoxide shell integration
+eval "$(starship init zsh)" # prompt
 
-# My editor
+# Environment Variables
 export EDITOR="nvim"
+
+export PATH="$HOME/.local/bin:$PATH"
