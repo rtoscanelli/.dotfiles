@@ -47,3 +47,6 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath' # to 
 # Shell integrations
 source /usr/share/fzf/shell/key-bindings.zsh # fzf keybindings
 eval "$(zoxide init --cmd cd zsh)" # zoxide shell integration
+
+# My editor
+export EDITOR="nvim"
