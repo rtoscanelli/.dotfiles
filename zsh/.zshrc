@@ -51,5 +51,4 @@ eval "$(starship init zsh)" # prompt
 
 # Environment Variables
 export EDITOR="nvim"
-
-export PATH="$HOME/.local/bin:$PATH"
+source ~/.path # load path variables
