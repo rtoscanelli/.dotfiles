@@ -7,4 +7,4 @@ Dependencies:
 - [Zoxide](https://github.com/ajeetdsouza/zoxide) - directory jump tool
 
 It has references to the following files:
-- [Starship prompt](https://starship.rs/) - prompt. [Config file](../starship).
+- [Starship prompt](https://starship.rs/) - prompt. [Config file](../starship/.config/).
