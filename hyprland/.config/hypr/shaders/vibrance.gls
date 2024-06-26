@@ -1,0 +1,60 @@
+precision highp float;
+varying vec2 v_texcoord;
+uniform sampler2D tex;
+
+const vec3 VIB_RGB_BALANCE = vec3(1.0, 1.0, 1.0);
+const float VIB_VIBRANCE = -0.69;
+
+const vec3 VIB_coeffVibrance = VIB_RGB_BALANCE * -VIB_VIBRANCE;
+
+// Function to convert RGB to HSV
+vec3 rgb2hsv(vec3 c) {
+    vec4 K = vec4(0.0, -1.0/3.0, 2.0/3.0, -1.0);
+    vec4 p = mix(vec4(c.bg, K.wz), vec4(c.gb, K.xy), step(c.b, c.g));
+    vec4 q = mix(vec4(p.xyw, c.r), vec4(c.r, p.yzx), step(p.x, c.r));
+
+    float d = q.x - min(q.w, q.y);
+    float e = 1.0e-10;
+    return vec3(abs(q.z + (q.w - q.y) / (6.0 * d + e)), d / (q.x + e), q.x);
+}
+
+// Function to convert HSV to RGB
+vec3 hsv2rgb(vec3 c) {
+    vec4 K = vec4(1.0, 2.0/3.0, 1.0/3.0, 3.0);
+    vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);
+    return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);
+}
+
+// Function to rotate hue
+vec3 rotateHue(vec3 color, float angle) {
+    vec3 hsv = rgb2hsv(color);
+    hsv.x = mod(hsv.x + angle, 1.0);
+    return hsv2rgb(hsv);
+}
+
+void main() {
+    vec4 pixColor = texture2D(tex, v_texcoord);
+    vec3 color = vec3(pixColor[0], pixColor[1], pixColor[2]);
+
+    // Adjust the hue of the red channel slightly
+    float redDominanceThreshold = 0.6; // Adjust this threshold as needed
+    if (color.r > redDominanceThreshold * max(color.g, color.b)) {
+        color = rotateHue(color, 0.02);  // Slight hue rotation
+    }
+
+    vec3 VIB_coefLuma = vec3(0.212656, 0.715158, 0.072186);  // Luma coefficients
+    float luma = dot(VIB_coefLuma, color);
+
+    float max_color = max(color[0], max(color[1], color[2]));
+    float min_color = min(color[0], min(color[1], color[2]));
+
+    float color_saturation = max_color - min_color;
+
+    vec3 p_col = vec3(vec3(vec3(vec3(sign(VIB_coeffVibrance) * color_saturation) - 1.0) * VIB_coeffVibrance) + 1.0);
+
+    pixColor[0] = mix(luma, color[0], p_col[0]);
+    pixColor[1] = mix(luma, color[1], p_col[1]);
+    pixColor[2] = mix(luma, color[2], p_col[2]);
+
+    gl_FragColor = pixColor;
+}
