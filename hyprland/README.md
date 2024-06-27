@@ -5,3 +5,4 @@
 - Wofi - Application launcher
 - Waypaper + swww - Wallpaper manager
 - Dunst - Notification daemon
+- Hyprshot - Screenshot tool
