@@ -2,7 +2,7 @@
 normal.family = "JetBrainsMono Nerd Font"
 
 [window]
-opacity = 0.90
+opacity = 0.97
 
 [cursor.style]
 shape = "Underline"
