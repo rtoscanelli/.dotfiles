@@ -52,3 +52,6 @@ eval "$(starship init zsh)" # prompt
 # Environment Variables
 export EDITOR="nvim"
 source ~/.path # load path variables
+
+# Alias
+alias nvimf='nvim $(find . | fzf --preview "bat --color=always {}")'
