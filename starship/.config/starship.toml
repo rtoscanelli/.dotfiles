@@ -1,26 +1,37 @@
 palette = "catppuccin-mocha"
 
+# format="""
+# [╭╴](238)\
+# $os \
+# : \
+# $all\
+# $line_break\
+# $character
+# """
 format="""
-[╭╴](238)\
-$os \
-: \
-$all\
+ \
+$directory\ 
+$all\ 
 $line_break\
 $character
 """
 
 [character]
-success_symbol = "[╰─](238)[››](blue)"
-error_symbol = "[╰─](238)[ ](red)"
-vicmd_symbol = "[❮](green)"
+# success_symbol = "[╰─](238)[››](blue)"
+# error_symbol = "[╰─](238)[ ](red)"
+# vicmd_symbol = "[❮](green)"
+success_symbol = ""
+error_symbol = ""
+vicmd_symbol = ""
 
 [directory]
 truncation_length = 4
-style = "blue"
+# style = "blue"
 read_only = " "
+fish_style_pwd_dir_length = 1
 
 [os]
-disabled = false
+disabled = true
 
 [shell]
 disabled = true
@@ -41,12 +52,12 @@ style = "purple"
 symbol = " "
 
 [git_status]
-style = "peach"
+style = "blue"
 format = '([$all_status$ahead_behind]($style) )'
 
 [git_branch]
 symbol = " "
-style = "cyan"
+style = "green"
 
 [java]
 symbol = " "
