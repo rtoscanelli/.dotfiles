@@ -19,9 +19,10 @@ zinit cdreplay -q # usefull for zinit
 
 # Keybinds
 bindkey '^l' autosuggest-accept
+bindkey '^ç' autosuggest-accept # Usefull for tmux since ^l is used for motion
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
-bindkey '^[[1;5C' autosuggest-accept # Usefull for tmux since ^l is used for motion
+bindkey '^[[1;5C' forward-word
 bindkey "^[[1;5D" backward-word
 
 # History
