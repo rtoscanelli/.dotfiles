@@ -9,7 +9,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "gopls", "jdtls", "tsserver", "emmet_ls", "cssls" },
+                ensure_installed = { "lua_ls", "gopls", "jdtls", "emmet_ls", "cssls" },
             })
         end
     },
@@ -38,21 +38,6 @@ return {
                         analyses = {
                             unusedparams = true,
                         },
-                    },
-                },
-            })
-            lspconfig.jdtls.setup({
-                capabilities = capabilities,
-                cmd = { "jdtls" },
-                filetypes = { "java" },
-                -- root_dir = lspconfig.util.root_pattern("pom.xml", ".git"),
-                root_dir = lspconfig.util.root_pattern(".git"),
-            })
-            lspconfig.tsserver.setup({
-                capabilities = capabilities,
-                init_options = {
-                    preferences = {
-                        disableSuggestions = true,
                     },
                 },
             })
