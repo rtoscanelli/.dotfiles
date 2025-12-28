@@ -1,0 +1,123 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+
+[
+  {
+    "context": "Workspace || Editor && vim_mode != insert || Terminal",
+    "bindings": {
+      // Others
+      "shift shift": "file_finder::Toggle",
+
+      // Terminal
+      "ctrl-t": "workspace::ToggleBottomDock",
+
+      // Windows and Panes
+      "ctrl-h": "pane::ActivatePreviousItem",
+      "ctrl-l": "pane::ActivateNextItem",
+      // "alt-h": "workspace::ActivatePaneLeft",
+      // "alt-l": "workspace::ActivatePaneRight",
+      "alt-l": "pane::ActivateNextItem",
+      "alt-h": "pane::ActivatePrevItem",
+      "ctrl-w": ["pane::CloseActiveItem", { "close_pinned": false }],
+      "ctrl-f": "project_panel::ToggleFocus",
+      "ctrl-e": "workspace::ToggleLeftDock",
+      "ctrl-g": "git_panel::ToggleFocus",
+
+      // Editor
+      "ctrl-r": "editor::Redo",
+    },
+  },
+  {
+    "context": "Editor && edit_prediction_conflict",
+    "bindings": {
+      "tab": "editor::AcceptEditPrediction",
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {},
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {},
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-1": "workspace::ToggleLeftDock",
+      "ctrl-2": "workspace::ToggleBottomDock",
+      "ctrl-3": "workspace::ToggleRightDock",
+    },
+  },
+  // ]
+
+  // [
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space c a": "editor::ToggleCodeActions",
+      "space e": "workspace::ToggleLeftDock",
+      "ctrl-/": "workspace::ToggleBottomDock",
+      "space p": "editor::Format",
+      "alt-l": "pane::ActivateNextItem",
+      "alt-h": "pane::ActivatePrevItem",
+      "space v": "pane::SplitRight",
+      "space w": "pane::CloseActiveItem",
+      // "space h": "workspace::ActivateNextPane",
+      // "space l": "workspace::ActivatePreviousPane",
+    },
+  },
+  // {
+  //   "context": "Editor && vim_mode == insert",
+  //   "bindings": {
+  //     "alt-h": "vim::Left",
+  //     "alt-l": "vim::Right",
+  //     "alt-j": "vim::Down",
+  //     "alt-k": "vim::Up"
+  //   }
+  // },
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      "shift-j": "editor::MoveLineDown",
+      "shift-k": "editor::MoveLineUp",
+    },
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "space e": "workspace::ToggleLeftDock",
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-/": "workspace::ToggleBottomDock",
+    },
+  },
+  {
+    "context": "Dock",
+
+    "bindings": {
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+      // ... or other keybindings
+    },
+  },
+]
