@@ -47,7 +47,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath' # to preview 
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath' # to preview directories with ls + zoxide
 
 # Shell integrations
-source /usr/share/fzf/shell/key-bindings.zsh # fzf keybindings
+# source /usr/share/fzf/shell/key-bindings.zsh # fzf keybindings
 eval "$(zoxide init --cmd cd zsh)" # zoxide shell integration
 eval "$(starship init zsh)" # prompt
 
@@ -57,6 +57,11 @@ source ~/.path # load path variables
 
 # Alias
 alias nvimf='nvim $(find . | fzf --preview "bat --color=always {}")'
+alias ls='ls --color=auto'
 
 # Comment support
 setopt interactive_comments # enable comments in interactive mode
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
