@@ -9,7 +9,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "gopls", "jdtls", "emmet_ls", "cssls" },
+                ensure_installed = { "lua_ls", "gopls", "jdtls", "pyright", "emmet_ls", "cssls" },
             })
         end
     },
@@ -45,11 +45,25 @@ return {
                 capabilities = capabilities,
                 filetypes = { "html", "css" },
             })
+            lspconfig.ts_ls.setup({
+                capabilities = capabilities,
+            })
             lspconfig.cssls.setup({
                 capabilities = capabilities,
             })
             lspconfig.dartls.setup({
                 capabilities = capabilities,
+            })
+            lspconfig.pyright.setup({
+                capabilities = capabilities,
+                settings = {
+                    python = {
+                        -- pythonPath = "/home/ricky/IST/Tese/Dora-KRB/python_env/bin/python",
+                        -- analysis = {
+                        --     extraPaths = { "/home/ricky/IST/Tese/Dora-KRB/python_env/lib/python3.10/site-packages", "/home/ricky/IST/Tese/Dave-KRB/python_env/lib/python3.10/site-packages", "/home/ricky/IST/Tese/library-KRB/python_env/lib/python3.10/site-packages" },
+                        -- },
+                    }
+                }
             })
 
             vim.keymap.set('n', 'J', vim.diagnostic.open_float)

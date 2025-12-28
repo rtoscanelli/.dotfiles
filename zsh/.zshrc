@@ -57,3 +57,6 @@ source ~/.path # load path variables
 
 # Alias
 alias nvimf='nvim $(find . | fzf --preview "bat --color=always {}")'
+
+# Comment support
+setopt interactive_comments # enable comments in interactive mode
