@@ -48,6 +48,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath' # to 
 
 # Shell integrations
 # source /usr/share/fzf/shell/key-bindings.zsh # fzf keybindings
+source /usr/share/doc/fzf/examples/key-bindings.zsh # fzf keybindings for Pop_OS!
 eval "$(zoxide init --cmd cd zsh)" # zoxide shell integration
 eval "$(starship init zsh)" # prompt
 
