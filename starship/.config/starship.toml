@@ -1,13 +1,5 @@
 palette = "catppuccin-mocha"
 
-# format="""
-# [╭╴](238)\
-# $os \
-# : \
-# $all\
-# $line_break\
-# $character
-# """
 format="""
  \
 $directory\ 
@@ -17,18 +9,18 @@ $character
 """
 
 [character]
-# success_symbol = "[╰─](238)[››](blue)"
-# error_symbol = "[╰─](238)[ ](red)"
-# vicmd_symbol = "[❮](green)"
-success_symbol = ""
-error_symbol = ""
-vicmd_symbol = ""
+success_symbol = '[ ❯](bold green)'
+error_symbol = '[ ❯](bold red)'
+vicmd_symbol = '[ ❮](green)'
 
 [directory]
 truncation_length = 4
 # style = "blue"
 read_only = " "
 fish_style_pwd_dir_length = 1
+
+[golang]
+disabled = true
 
 [os]
 disabled = true
